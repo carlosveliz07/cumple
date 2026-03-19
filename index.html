@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para Ti ❤️</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&family=Great+Vibes&display=swap"
+        rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+            overflow-x: hidden;
+        }
+
+        .container {
+            text-align: center;
+            padding: 20px;
+        }
+
+        h1 {
+            font-family: 'Great Vibes', cursive;
+            font-size: 2.5em;
+            color: white;
+            animation: glow 2s infinite alternate;
+        }
+
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 10px #fff;
+            }
+
+            to {
+                text-shadow: 0 0 25px #ff4da6;
+            }
+        }
+
+        /* CARTA */
+        .card {
+            background: white;
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 25px;
+            border-radius: 20px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+            animation: fadeIn 1.5s ease;
+        }
+
+        .card p {
+            color: #555;
+            font-size: 1.05em;
+            line-height: 1.6;
+            text-align: justify; /* 🔥 AQUÍ ESTÁ LO QUE QUERÍAS */
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* CUBO */
+        .cube-container {
+            perspective: 1000px;
+            width: 200px;
+            height: 200px;
+            margin: 30px auto;
+        }
+
+        .cube {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            transform-style: preserve-3d;
+            animation: rotate 10s infinite linear;
+        }
+
+        .cube img {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 15px;
+        }
+
+        .front { transform: rotateY(0deg) translateZ(100px); }
+        .back { transform: rotateY(180deg) translateZ(100px); }
+        .left { transform: rotateY(-90deg) translateZ(100px); }
+        .right { transform: rotateY(90deg) translateZ(100px); }
+
+        @keyframes rotate {
+            from { transform: rotateY(0deg); }
+            to { transform: rotateY(360deg); }
+        }
+
+        /* LLUVIA */
+        .falling {
+            position: fixed;
+            top: -50px;
+            font-size: 26px;
+            animation: fall linear infinite;
+            pointer-events: none;
+        }
+
+        @keyframes fall {
+            to {
+                transform: translateY(110vh);
+            }
+        }
+
+        /* BOTÓN */
+        .button {
+            margin-top: 20px;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 25px;
+            background: #ff4da6;
+            color: white;
+            font-size: 1em;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            transition: 0.3s;
+        }
+
+        .button:hover {
+            transform: scale(1.1);
+        }
+
+        .surprise {
+            display: none;
+            margin-top: 15px;
+            color: white;
+            font-size: 1.2em;
+            animation: fadeIn 1s ease;
+        }
+
+        audio {
+            margin-top: 20px;
+            width: 90%;
+            max-width: 300px;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 600px) {
+            h1 { font-size: 2em; }
+
+            .cube-container {
+                width: 150px;
+                height: 150px;
+            }
+
+            .cube img {
+                width: 150px;
+                height: 150px;
+            }
+
+            .front { transform: rotateY(0deg) translateZ(75px); }
+            .back { transform: rotateY(180deg) translateZ(75px); }
+            .left { transform: rotateY(-90deg) translateZ(75px); }
+            .right { transform: rotateY(90deg) translateZ(75px); }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Para Ti 💖</h1>
+
+        <div class="card">
+            <p>
+                Osita 🐻💖,<br><br>
+
+                Primeramente quiero agradecerle a Dios por permitirme escribirte esta carta. Te deseo muchas felicidades, muchos éxitos y que logres todo lo que te propongas.<br><br>
+
+                Quiero que sepas que siempre contarás con mi apoyo en todo momento. Me siento muy orgulloso de ti, de lo responsable y trabajadora que eres, y del empeño y dedicación que le pones a las cosas que haces.<br><br>
+
+                Me gusta poder compartir momentos contigo, aunque sean pequeños. Valoro mucho tu compañía y el apoyo que siempre me brindas.<br><br>
+
+                También estoy agradecido con Dios por haberte puesto en mi camino; Él sabía el momento correcto en que nos íbamos a encontrar, y estoy seguro de que nos bendecirá siempre.<br><br>
+
+                Con mucho cariño,<br>
+                para mi osita 🐻💖<br><br>
+
+                Osito te ama mucho ❤️🐻
+            </p>
+        </div>
+
+        <div class="cube-container">
+            <div class="cube">
+                <img src="./imagenes/001.jpeg" class="front">
+                <img src="./imagenes/002.jpeg" class="back">
+                <img src="./imagenes/003.png" class="left">
+                <img src="./imagenes/004.png" class="right">
+            </div>
+        </div>
+
+        <button class="button" onclick="mostrarSorpresa()">Tócame 💕</button>
+        <div class="surprise" id="sorpresa">Me gusta la forma en que haces las cosas, tienes algo especial 💕✨</div>
+
+        <audio controls autoplay loop>
+            <source src="./musica/Río Roma - Mi Persona Favorita (Letra  Lyrics).mp3" type="audio/mpeg">
+        </audio>
+    </div>
+
+    <script>
+        const symbols = ['🎈', '🌹', '🧸', '💌', '💖', '✨'];
+
+        function createFalling() {
+            const el = document.createElement('div');
+            el.classList.add('falling');
+            el.innerText = symbols[Math.floor(Math.random() * symbols.length)];
+            el.style.left = Math.random() * window.innerWidth + 'px';
+            el.style.animationDuration = (Math.random() * 3 + 3) + 's';
+            document.body.appendChild(el);
+
+            setTimeout(() => el.remove(), 6000);
+        }
+
+        setInterval(createFalling, 200);
+
+        function mostrarSorpresa() {
+            document.getElementById('sorpresa').style.display = 'block';
+        }
+    </script>
+
+</body>
+</html>
